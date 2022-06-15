@@ -58,12 +58,30 @@ export const HeaderStyle = styled.header`
     display: flex;
     width: 7%;
     justify-content: space-between;
+    position: relative;
     align-items: center;
     .icon {
       margin-right: 10px;
       cursor: pointer;
       color: #333;
       font-size: 2rem;
+    }
+    .count-cart{
+      font-size: 1rem;
+      color: #fff;
+      width: 0.7rem;
+      height: 0.7rem;
+      display: flex;
+      align-items: center;
+      background-color: #ffc107;
+      border-radius: 50%;
+      padding: 0.5rem;
+      margin-left: 10px;
+      position: absolute;
+      top: -12px;
+      right: -2px;
+      z-index: 1;
+
     }
   }
 `

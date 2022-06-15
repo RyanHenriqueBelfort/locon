@@ -8,12 +8,18 @@ export function CartContextProvider({children}) {
   const [moviesCart, setMoviesCart] = useState([])
   const [cost, setCost] = useState(0)
   const [favorite, setFavorite] = useState([])
+  const [search, setSearch] = useState('')
+  
 
   useEffect(() => {
-    fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR&page=1`)
+    // `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`
+    // `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR&page=1`
+    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`)
       .then(response => response.json())
       .then(data => setMovie(data.results))
   }, [])
+
+  console.log(search)
 
 
   const getMovies = (movie) => {
@@ -59,6 +65,11 @@ export function CartContextProvider({children}) {
     setFavorite([])
   }
 
+  const getSearch = (search) => {
+    setSearch(search)
+  }
+  
+
   return(
     <CartContext.Provider value={{movie, 
     moviesCart, 
@@ -72,7 +83,8 @@ export function CartContextProvider({children}) {
     getMoviesFavorite,
     deleteAllFavoriteMovies,
     handleDeleteCart,
-    handleDeleteFavorite
+    handleDeleteFavorite,
+    setSearch,
     }}>
       {children}
     </CartContext.Provider>

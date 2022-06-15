@@ -12,11 +12,10 @@ export const  CardMovie = () => {
 
     <>
       <StyleCardMovies>
-        {
-          movie.map(item => (
-            <div key={item.id} className="card">
-
-              <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt="" />
+        {!movie && <div>Nenhum filme encontrado</div>}
+        {movie && movie.map(item => (
+              <div key={item.id} className="card">
+                <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt="" />
               <div className="card-body">
                 <div className="title">
                   <span>{item.title}</span>
@@ -64,6 +63,7 @@ export const  CardMovie = () => {
               </div>
             </div>
           ))}
+
       </StyleCardMovies>
     </>
   )
