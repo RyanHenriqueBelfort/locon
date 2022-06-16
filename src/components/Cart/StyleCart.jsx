@@ -3,11 +3,12 @@ import styled from "styled-components";
 export const Container = styled.div`
   position: fixed;
   right: 0;
+  top: 3.75rem;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  width: 35%;
+  background-color: #a9c5f5;
+  width: 25%;
   .header{
     display: flex;
     justify-content: space-between;
@@ -36,7 +37,6 @@ export const Container = styled.div`
       display: flex;
       align-items: center;
       justify-content: flex-end;
-      /* background-color: coral; */
       width: 8rem;
       p{
         margin-right: 1rem;

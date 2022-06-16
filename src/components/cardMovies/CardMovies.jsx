@@ -7,12 +7,13 @@ import { StyleCardMovies } from './StyleCardMovies'
 
 export const  CardMovie = () => {
   const {movie, getMovies, getMoviesFavorite } = useCart()
-  
   return (
 
     <>
       <StyleCardMovies>
-        {!movie && <div>Nenhum filme encontrado</div>}
+        {movie.length === 0 &&(
+          <div>Nenhum filme encontrado</div>
+        )}
         {movie && movie.map(item => (
               <div key={item.id} className="card">
                 <img src={`https://image.tmdb.org/t/p/w300/${item.poster_path}`} alt="" />

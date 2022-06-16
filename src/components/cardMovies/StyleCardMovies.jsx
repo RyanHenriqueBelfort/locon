@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 
 export const StyleCardMovies = styled.div`
-  width: 70%;
+  width: 80%;
   gap: 2rem;
   display: flex;
   justify-content: center;

@@ -1,15 +1,15 @@
 import styled from "styled-components";
 import { useCart } from '../../context/CartContext'
 
-
 export const Container = styled.div`
   position: fixed;
-  left: 0;
+  right: 0;
+  top: 3.75rem;
   z-index: 1000;
   display: flex;
   flex-direction: column;
-  background-color: #fff;
-  width: 35%;
+  background-color: #ddb8b8;
+  width: 25%;
   .header{
     display: flex;
     justify-content: space-between;
@@ -27,6 +27,7 @@ export const Container = styled.div`
     justify-content: space-between;
     padding: 0.5rem;
     border-bottom: 1px solid #ccc;
+    
     &:last-child{
       border-bottom: none;
     }

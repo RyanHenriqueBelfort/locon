@@ -9,15 +9,21 @@ export function CartContextProvider({children}) {
   const [cost, setCost] = useState(0)
   const [favorite, setFavorite] = useState([])
   const [search, setSearch] = useState('')
+  const [nextPage, setNextPage] = useState(1)
   
-
+  console.log(moviesCart)
   useEffect(() => {
-    // `https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`
-    // `https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR&page=1`
-    fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`)
-      .then(response => response.json())
-      .then(data => setMovie(data.results))
-  }, [])
+    if (search) {
+      fetch(`https://api.themoviedb.org/3/search/movie?api_key=${API_KEY}&query=${search}`)
+        .then(response => response.json())
+        .then(data => setMovie(data.results))
+    } else{ 
+      fetch(`https://api.themoviedb.org/3/movie/popular?api_key=${API_KEY}&language=pt-BR&page=${nextPage}`)
+        .then(response => response.json())
+        .then(data => setMovie(data.results))
+    }
+
+  }, [search, nextPage])
 
   console.log(search)
 
@@ -68,7 +74,18 @@ export function CartContextProvider({children}) {
   const getSearch = (search) => {
     setSearch(search)
   }
-  
+
+  const Npage = () =>{
+    setNextPage(nextPage + 1)
+  }
+  const Ppage = () =>{
+    if(nextPage > 1){
+      setNextPage(nextPage - 1)
+    }
+  }
+
+  console.log(nextPage)
+
 
   return(
     <CartContext.Provider value={{movie, 
@@ -85,6 +102,9 @@ export function CartContextProvider({children}) {
     handleDeleteCart,
     handleDeleteFavorite,
     setSearch,
+    Npage,
+    Ppage,
+    nextPage
     }}>
       {children}
     </CartContext.Provider>
