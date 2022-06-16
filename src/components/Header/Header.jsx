@@ -10,8 +10,8 @@ import { Favorite } from '../Favorite/Favorite';
 
 export const Header = () => {
   const { moviesCart, setSearch } = useCart()
-  const [cartOnScreen, setCartOrScreen] = useState(0)
-  const [favoriteOnScreen, setFavoriteOrScreen] = useState(0)
+  const [cartOnScreen, setCartOrScreen] = useState()
+  const [favoriteOnScreen, setFavoriteOrScreen] = useState()
 
   const [searchByWord, setSearchByWord] = useState('')
 
@@ -47,7 +47,7 @@ export const Header = () => {
   
   return (
     <>
-      <HeaderStyle className="header">
+      <HeaderStyle className="header" data-aos={"fade-down"}> 
         <h1>LocOn</h1>
 
         <div className="search">

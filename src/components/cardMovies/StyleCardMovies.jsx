@@ -6,10 +6,8 @@ export const StyleCardMovies = styled.div`
   gap: 2rem;
   display: flex;
   justify-content: center;
-  
   flex-flow: row wrap;
   margin: 7rem auto 0 auto;
-  /* background-color: darkgray; */
   h5{
     text-align: center;
     font-size: 1rem;
@@ -47,8 +45,6 @@ export const StyleCardMovies = styled.div`
     .coracao{
       padding: 0.5rem;
       color: red;  
-      /* border-radius: 100%; */
-      /* background-color: #ffc107; */
       cursor: pointer;
       transition: all 0.5s;
       &:hover{

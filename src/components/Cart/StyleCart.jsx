@@ -1,11 +1,14 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
-export const Container = styled.div`
+const Container = styled.div`
   position: fixed;
   right: 0;
   top: 3.75rem;
   z-index: 1000;
   display: flex;
+  overflow: auto;
+  height: 70%;
   flex-direction: column;
   background-color: #a9c5f5;
   width: 25%;
@@ -56,5 +59,10 @@ export const Container = styled.div`
     &:last-child{
       border-top: none;
     }
+    .btn{
+      cursor: pointer;
+    }
   }
-`
+`;
+
+export { Container};

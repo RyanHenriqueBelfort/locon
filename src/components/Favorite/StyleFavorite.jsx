@@ -5,6 +5,8 @@ export const Container = styled.div`
   position: fixed;
   right: 0;
   top: 3.75rem;
+  height: 70%;
+
   z-index: 1000;
   display: flex;
   flex-direction: column;

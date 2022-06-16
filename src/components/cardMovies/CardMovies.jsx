@@ -10,7 +10,7 @@ export const  CardMovie = () => {
   return (
 
     <>
-      <StyleCardMovies>
+      <StyleCardMovies data-aos={"fade-down"} data-aos-delay="200">
         {movie.length === 0 &&(
           <div>Nenhum filme encontrado</div>
         )}
